@@ -463,6 +463,15 @@ input[data-error]::after {
   display: block;
   padding: 0;
 }
+
+/* Message erreur */
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
 .copyrights {
   color: #fe142f;
   padding: 0;

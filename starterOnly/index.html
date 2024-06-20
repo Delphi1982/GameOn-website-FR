@@ -7,7 +7,7 @@
 		<link href="modal.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet">
-		<script src="modal.js" defer></script>
+		
 	</head>
 	<body>
 		<div class="topnav" id="myTopnav">
@@ -41,35 +41,41 @@
 				<div class="content">
 					<span class="close"></span>
 					<div class="modal-body">
-						<form action="index.html" id="reserve" method="get" name="reserve" onsubmit="return validate();">
+						<form action="index.html" id="reserve" method="get" name="reserve">
 							<div class="formData">
 								<label for="first">Prénom</label>
 								<br>
-								<inputclass="text-control" id="first" name="first" required="" type="text">
+								<input class="text-control" id="first" name="first" required="" type="text">
+								<span class="error-message" id="error-first"></span>
 									<br>
 								</div>
 								<div class="formData">
 									<label for="last">Nom</label>
 									<br>
 									<input class="text-control" id="last" name="last" required="" type="text">
+									<span class="error-message" id="error-last"></span>
 									<br>
 								</div>
+								
 								<div class="formData">
 									<label for="email">E-mail</label>
 									<br>
 									<input class="text-control" id="email" name="email" required="" type="email">
+									<span class="error-message" id="error-email"></span>
 									<br>
 								</div>
 								<div class="formData">
 									<label for="birthdate">Date de naissance</label>
 									<br>
 									<input class="text-control" id="birthdate" name="birthdate" required="" type="date">
+									<span class="error-message" id="error-birthdate"></span>
 									<br>
 								</div>
 								<div class="formData">
 									<label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
 									<br>
 									<input class="text-control" id="quantity" max="99" min="0" name="quantity" required="" type="number">
+									<span class="error-message" id="error-quantity"></span>
 								</div>
 								<p class="text-label">
 									A quel tournoi souhaitez-vous participer cette année ?
@@ -87,15 +93,20 @@
 									<label class="checkbox-label" for="location5"><span class="checkbox-icon"></span> Boston</label>
 									<input class="checkbox-input" id="location6" name="location" type="radio" value="Portland">
 									<label class="checkbox-label" for="location6"><span class="checkbox-icon"></span> Portland</label>
+	
 								</div>
+								<span class="error-message" id="error-location"></span>
+
 								<div class="formData">
 									<input class="checkbox-input" id="checkbox1" required="" type="checkbox">
 									<label class="checkbox2-label" for="checkbox1"><span class="checkbox-icon"></span> J'ai lu et accepté les conditions d'utilisation.</label>
 									<br>
 									<input class="checkbox-input" id="checkbox2" type="checkbox">
 									<label class="checkbox2-label" for="checkbox2"><span class="checkbox-icon"></span> Je souhaite être prévenu des prochains évènements.</label>
+									<span class="error-message" id="error-checkbox1"></span>
 									<br>
 								</div>
+								
 								<input class="button" type="submit" value="C'est parti">
 							</form>
 						</div>
@@ -108,4 +119,5 @@
 				</p>
 			</footer>
 		</body>
+		<script src="modal.js" ></script>
 	</html>
