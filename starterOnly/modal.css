@@ -464,12 +464,11 @@ input[data-error]::after {
   padding: 0;
 }
 
-/* Message erreur */
+/* ------------ Message erreur --------------- */
 
 .error-message {
   color: red;
   font-size: 0.9em;
-  margin-top: 5px;
 }
 
 .copyrights {
