@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> <!-- modif langue -->
 	<head>
 		<meta charset="utf-8">
 		<title>Reservation</title>
@@ -16,7 +16,6 @@
 				<img alt="logo" height="auto" src="Logo.png" width="auto">
 			</div>
 			<div class="main-navbar">
-				<a class="active" href="#"><span>Accueil</span></a>
 				<a href="#"><span>Détails de l'évènement</span></a>
 				<a href="#"><span>À propos</span></a>
 				<a href="#"><span>Contact</span></a>
@@ -31,23 +30,28 @@
 					<p class="hero-text">
 						Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
 					</p>
-					<button class="btn-signup modal-btn">je m'inscris</button>
 				</div>
 				<div class="hero-img">
-					<img alt="img" src="./bg_img.jpg">
+					<img alt="img" src="./bg_img.jpg"> 
+					
 				</div>
-				<button class="btn-signup modal-btn">je m'inscris</button>
-			</div>
-			<div class="bground">
-				<div class="content">
-					<span class="close"></span>
-					<div class="modal-body">
-						<form action="index.html" id="reserve" method="get" name="reserve" onsubmit="validate(event)" novalidate>
+				<button class="btn-signup modal-btn">Je M'inscris</button>
+					
+				<div class="bground">
+				
+					<div class="content">
+						<span class="close"></span>
+						<div id="success-message" ><!--Début : Ajout élément lors de a validation du formulaire sans erreurs -->
+							<p>Merci pour <br> votre inscription</p>
+							<button id="close-button">Fermer</button>
+						</div>                                           <!-- Fin  -->
+						<div class="modal-body">
+				<!-- ?? -->		<form action="index.html" id="reserve" method="get" name="reserve" novalidate>
 							<div class="formData">
 								<label for="first">Prénom</label>
 								<br>
 								<input class="text-control" id="first" name="first" required="" type="text">
-								<span class="error-message" id="error-first"></span>
+								<span class="error-message" id="error-first"></span> <!-- Ajout span pour message d'erreur -->
 									<br>
 								</div>
 								<div class="formData">
@@ -94,8 +98,7 @@
 									<label class="checkbox-label" for="location5"><span class="checkbox-icon"></span> Boston</label>
 									<input class="checkbox-input" id="location6" name="location" type="radio" value="Portland">
 									<label class="checkbox-label" for="location6"><span class="checkbox-icon"></span> Portland</label>
-	
-								</div>
+									</div>
 								<span class="error-message" id="error-location"></span>
 
 								<div class="formData">
@@ -107,18 +110,12 @@
 									<span class="error-message" id="error-checkbox1"></span>
 									<br>
 								</div>
-								
-								<input class="button" type="submit" value="C'est parti">
-								<div id="success-message" style="display: none;">
-									<p>Inscription réussie !</p>
-								</div>
+									<input class="button" type="submit" value="C'est parti">
 							</form>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div id="success-message" style="display: none;">
-					<p>Inscription réussie !</p>
-				  </div>
+				</div>	
 			</main>
 			<footer>
 				<p class="copyrights">

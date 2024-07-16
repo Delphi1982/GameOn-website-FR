@@ -56,6 +56,9 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  text-decoration: underline; /* Ajout de l'effet souligné*/
+
+
 }
 
 .topnav a.active {
@@ -68,38 +71,6 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-} 
 
 main {
   font-size: 130%;
@@ -138,16 +109,24 @@ main {
 }
 
 /* Modal form */
-
+/*-------------------------BUTTON CORRECTION---------------------*/
 .button {
   background: #fe142f;
-  margin-top: 0.5em;
+  margin-top: 1em;
   padding: 1em;
   color: #fff;
-  border-radius: 15px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+ /* Ajout */ 
+  display: block; 
+  width: 50%; 
+  margin: 0 auto; 
+  border: none;
+  padding: 10px 20px;
+  
 }
+
 
 .button:hover {
   background: #3876ac;
@@ -160,7 +139,7 @@ main {
 .bground {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 90;
   left: 0;
   top: 0;
   height: 100%;
@@ -186,6 +165,7 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  
 }
 
 label {
@@ -226,12 +206,7 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -305,6 +280,7 @@ input[data-error]::after {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
+  z-index: 1001;
 }
 .close:before,
 .close:after {
@@ -321,17 +297,33 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
-.btn-submit,
+.btn-submit {
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 30px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  position:absolute;
+  left: 110px;
+  bottom: 250px;
+}
 .btn-signup {
   background: #fe142f;
   display: block;
   margin: 0 auto;
   border-radius: 7px;
   font-size: 1rem;
-  padding: 12px 82px;
+  padding: 12px 30px;
   color: #fff;
   cursor: pointer;
   border: 0;
+  position:absolute;
+  left: 67px;
+  bottom: 125px;
 }
 /* custom select styles */
 .custom-select {
@@ -405,13 +397,14 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  min-height: 70vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
+  position: relative;
 }
 .hero-content {
   padding: 51px 67px;
@@ -420,7 +413,7 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+  min-width: 500px;
 }
 .hero-content::after {
   content: "";
@@ -433,7 +426,7 @@ input[data-error]::after {
 }
 .hero-content > * {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 .hero-headline {
   font-size: 6rem;
@@ -441,21 +434,15 @@ input[data-error]::after {
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 130%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
 }
-.btn-signup {
-  outline: none;
-  text-transform: capitalize;
-  font-size: 1.3rem;
-  padding: 15px 23px;
-  margin: 0;
-  margin-top: 59px;
-}
+
 .hero-img {
   grid-column: span 8;
+  z-index: 2;
 }
 .hero-img img {
   width: 100%;
@@ -464,11 +451,11 @@ input[data-error]::after {
   padding: 0;
 }
 
-/* ------------ Error Message Form ----start----------- */
+/* ------------ Ajout - Error Message Form ----start----------- */
 
 .error-message {
   color: #F2163E;
-  font-size: 0.7em;
+  font-size: 12px;
   font-style: italic;
   font-weight: 300; 
 }
@@ -480,15 +467,49 @@ input.error {
 /* ------------ Error Message Form ----end----------- */
 
 
-/* ------------ Success Message Form ----start----------- */
+/* ------------ Ajout - Success Message Form ----start----------- */
+
 
 #success-message {
-  background-color: #035AA6;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: black;
   color: white;
-  margin-top: 10px;
-  text-align: center;
+  padding: 20px;
   border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  height: 745px;
+  width: 500px;
 }
+
+#success-message p {
+  display: flex;
+  align-items: center;
+  height: 95%;
+}
+
+#close-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block; 
+  width: 50%; 
+  margin: auto; 
+}
+
+ #close-button:hover {
+  background-color: #3876ac;
+}
+
 
 /* ------------ Success Message Form ----end----------- */
 
@@ -500,51 +521,153 @@ input.error {
   font-weight: bolder;
 }
 .hero-section > .btn-signup {
-  display: none;
+  display: block;
 }
 footer {
   padding-left: 2vw;
   padding-right: 2vw;
   margin: 0 20px;
 }
-@media screen and (max-width: 800px) {
+
+
+/* ------------ Media Query ----------- */
+/* déplacement en bas de code */
+
+
+@media screen and (max-width: 768px) { 
+
+  .main-navbar{
+    margin-top: 0px;
+  }
+
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav .icon .fa {
+    color: red;
+
+  }
+
+  .topnav .icon .fa:hover
+  {
+    color: white;
+
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-logo {
+    float: left;
+    width: 150px;
+    margin: 20px;
+  }
+
+  .header-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .hero-section {
     display: block;
+    position: relative;
     box-shadow: unset;
   }
+
   .hero-content {
     background: #fff;
     color: #000;
     padding: 20px;
   }
+
   .hero-content::after {
     content: unset;
   }
-  .hero-content .btn-signup {
-    display: none;
-  }
-  .hero-headline {
-    font-size: 4.5rem;
-    white-space: normal;
-  }
-  .hero-text {
-    width: unset;
-    font-size: 1.5rem;
-  }
+
   .hero-img img {
+  
     border-radius: 10px;
     margin-top: 40px;
   }
-  .hero-section > .btn-signup {
-    display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
+
+  .btn-signup {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; 
+    text-align: center;
+    width: 50%; 
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 150px;
+    position: relative;
+    left: 0;
   }
+  
+  .hero-headline {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+
+  .hero-text {
+    width: unset;
+    font-size: 0.77rem;
+  }
+  
   .copyrights {
-    margin-top: 50px;
+    margin-top: -80px;
     text-align: center;
   }
 }
+
+
+@media screen and (max-width: 540px) { 
+  .main-navbar{
+    margin-top: 20px;
+  }
+
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+  }
+
+  .btn-signup {
+    background: #fe142f;
+    display: block; 
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 7px;
+    font-size: 1rem;
+    padding: 12px 30px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    position: relative;
+    left: 0;
+
+    
+  }
+} 
+
 
 @keyframes modalopen {
   from {
