@@ -484,7 +484,7 @@ input.error {
   z-index: 1000;
   left: 0;
   top: 0;
-  height: 745px;
+  height: 800px;
   width: 500px;
 }
 
@@ -504,6 +504,7 @@ input.error {
   display: block; 
   width: 50%; 
   margin: auto; 
+  margin-bottom: 50px;
 }
 
  #close-button:hover {
